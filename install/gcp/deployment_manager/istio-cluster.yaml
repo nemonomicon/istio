@@ -3,18 +3,25 @@ imports:
 - path: istio-cluster.jinja
 
 resources:
-- name: my-cluster
+- name: istio
   type: istio-cluster.jinja
   properties:
-    gkeClusterName: istio-cluster
-    zone: us-central1-a
+    gkeClusterName: istio
+    zone: us-central1-c
     initialNodeCount: 4
-    instanceType: n1-standard-1
+    minNodeCount: 4
+    maxNodeCount: 10
+    autoUpgrade: false
+    autoRepair: true
+    instanceType: n1-standard-4
+    diskType: pd-standard
+    diskSize: 100
+    imageType: COS
     enableAutomaticSidecarInjection: true
     enableMutualTLS: true
     enablePrometheus: true
     enableGrafana: true
     enableTracing: true
     enableServiceGraph: true
-    enableBookInfoSample: true
+    enableBookInfoSample: false
     installIstioRelease: 1.0.0
