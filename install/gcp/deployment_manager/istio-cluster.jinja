@@ -9,17 +9,8 @@ resources:
     cluster:
       name: {{ properties['gkeClusterName'] }}
       initialClusterVersion: 1.10.5-gke.3
-      loggingService: logging.googleapis.com/kubernetes
-      monitoringService: monitoring.googleapis.com/kubernetes
       legacyAbac:
         enabled: false
-      autoscaling:
-        enabled: {{ properties['autoscaling'] }}
-        minNodeCount: {{ properties['minNodeCount'] }}
-        maxNodeCount: {{ properties['maxNodeCount'] }}
-      management:
-        autoUpgrade: {{ properties['autoUpgrade'] }}
-        autoRepair: {{ properties['autoRepair'] }}
       initialNodeCount: {{ properties['initialNodeCount'] }}
       nodeConfig:
         machineType: {{ properties["instanceType"] }}
