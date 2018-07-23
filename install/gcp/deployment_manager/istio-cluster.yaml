@@ -10,9 +10,6 @@ resources:
     zone: us-central1-c
     initialNodeCount: 4
     instanceType: n1-standard-4
-    diskType: pd-standard
-    diskSize: 100
-    imageType: COS
     enableAutomaticSidecarInjection: true
     enableMutualTLS: true
     enablePrometheus: true

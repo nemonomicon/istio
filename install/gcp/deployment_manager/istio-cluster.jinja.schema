@@ -14,7 +14,7 @@ properties:
   gkeClusterName:
     type: string
     description: GKE Cluster Name
-    default: istio-cluster
+    default: istio
   zone:
     type: string
     description: Zone in which the cluster should run.
