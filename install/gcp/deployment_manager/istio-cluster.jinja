@@ -8,15 +8,12 @@ resources:
     zone: {{ properties['zone'] }}
     cluster:
       name: {{ properties['gkeClusterName'] }}
-      initialClusterVersion: 1.10.5-gke.3
+      initialClusterVersion: 1.10.5
       legacyAbac:
         enabled: false
       initialNodeCount: {{ properties['initialNodeCount'] }}
       nodeConfig:
         machineType: {{ properties["instanceType"] }}
-        imageType: {{ properties["imageType"] }}
-        diskSizeGb: {{ properties["diskSize"] }}
-        diskType: {{ properties["diskType"] }}
         oauthScopes:
         - https://www.googleapis.com/auth/cloud-platform
         - https://www.googleapis.com/auth/cloud_debugger
